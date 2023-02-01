@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-markdown-display/src/index.d.ts b/node_modules/react-native-markdown-display/src/index.d.ts
+index f0daf4a..c479a79 100644
+--- a/node_modules/react-native-markdown-display/src/index.d.ts
++++ b/node_modules/react-native-markdown-display/src/index.d.ts
+@@ -86,6 +86,7 @@ export interface MarkdownProps {
+   style?: StyleSheet.NamedStyles<any>;
+   renderer?: AstRenderer;
+   markdownit?: MarkdownIt;
++  children?: ReactNode;
+   mergeStyle?: boolean;
+   debugPrintTree?: boolean;
+   onLinkPress?: (url: string) => boolean;

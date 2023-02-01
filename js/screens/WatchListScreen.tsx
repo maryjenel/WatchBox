@@ -35,6 +35,10 @@ const WatchListScreen = () => {
   const sortedWatches = sortWatches(SortType.ascending, filteredWatches);
 
   const navigation = useNavigation<NavigationProp>();
+
+  const navigateToWatchDetail = (item: Watch) => {
+    navigation.navigate(Routes.WATCH_DETAIL, {watch: item});
+  };
   return (
     <SafeAreaView>
       <FlatList
@@ -47,9 +51,7 @@ const WatchListScreen = () => {
           const imageUrl = getImageUrl(item.image.url);
           return (
             <WatchListItem
-              onPress={() => {
-                navigation.navigate(Routes.WATCH_DETAIL, {watch: item});
-              }}
+              onPress={() => navigateToWatchDetail(item)}
               brand={brand}
               imageUrl={imageUrl}
               name={name}
