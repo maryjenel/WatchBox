@@ -1,4 +1,4 @@
-import {RouteProp} from '@react-navigation/native';
+import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
 import {
   Image,
@@ -10,19 +10,16 @@ import {
   ViewStyle,
 } from 'react-native';
 import Markdown from 'react-native-markdown-display';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
+import {NavigatorParamList, Routes} from '../navigation/Routes';
 import {COLORS} from '../theme/colors';
 import {ALIGN_ITEMS_CENTER, FLEX_FILL} from '../theme/common';
 import {spacing} from '../theme/spacing';
-import {Watch} from '../types/types';
 import {getImageUrl, screenWidth} from '../utils/utils';
 
-interface Props {
-  route: RouteProp<{params: {watch: Watch}}, 'params'>;
-}
-
-const WatchDetailScreen = ({route}: Props) => {
+const WatchDetailScreen = ({
+  route,
+}: StackScreenProps<NavigatorParamList, Routes.WATCH_DETAIL>) => {
   const {watch} = route.params;
   const {name} = watch;
 

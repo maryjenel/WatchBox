@@ -1,11 +1,11 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {Routes} from './js/navigation/Routes';
+import {NavigatorParamList, Routes} from './js/navigation/Routes';
 import {WatchDetailScreen, WatchListScreen} from './js/screens';
 
 function App(): JSX.Element {
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<NavigatorParamList>();
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={Routes.WATCH_LIST_SCREEN}>
